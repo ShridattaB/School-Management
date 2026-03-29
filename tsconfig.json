@@ -1,5 +1,5 @@
-//this is the typescript config file , 
-// verifies type cheecking rules , verifies code is correct or not before it runs and find the mistakes 
+//this is the typescript config file ,
+// verifies type cheecking rules , verifies code is correct or not before it runs and find the mistakes
 // enable compiler options like strict mode , path aliases --> @/components for src/components, and import export module systems
 // this config covers src/ files
 
