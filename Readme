@@ -1,0 +1,3 @@
+Axios is used in the application code to make API calls, so it is required when the app runs in production.
+
+@types/node is only used during development to provide TypeScript type support. It is not needed when the app is running, so it does not get included in production.
