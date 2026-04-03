@@ -7,3 +7,9 @@ Axios is used in the application code to make API calls, so it is required when 
 Prettier → formatting (spaces, semicolons)
 ESLint → logic issues (unused vars, bad patterns)
 Both together → clean + consistent codebase
+
+
+build size
+dist/index.html                   0.46 kB │ gzip:  0.30 kB
+dist/assets/index-x1XGuNl0.css    0.00 kB │ gzip:  0.02 kB
+dist/assets/index-CX8LliMw.js   190.62 kB │ gzip: 60.03 kB
