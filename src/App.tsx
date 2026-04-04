@@ -1,23 +1,15 @@
-import { useState } from 'react';
-import type { User, CreateUser } from './types/index';
+import type { User } from './types/user';
 
 function App() {
-  const [user, setUser] = useState<User | null>(null);
-
-  const newUser: CreateUser = {
+  const user: User = {
+    id: '1',
     name: 'Shridatt',
     email: 'test@gmail.com',
-    role: 'student',
-    isActive: true
+    // role: 'student',
+    createdAt: new Date().toISOString(),
   };
 
-  return (
-    <>
-      <h1>School Management System</h1>
-      <p>{newUser.name}</p>
-  
-    </>
-  );
+  return <h1>{user.name}</h1>;
 }
 
 export default App;

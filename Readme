@@ -16,3 +16,7 @@ dist/assets/index-CX8LliMw.js   190.62 kB │ gzip: 60.03 kB
 
 
 “I configured ESLint using flat config, enabled no-unused-vars and React hooks rules, and verified by intentionally adding an unused variable and fixing it.
+
+Required fields → must be present
+Optional fields (?) → can skip
+Type safety → catches errors before runtime
