@@ -10,3 +10,11 @@ export interface User {
   createdAt: string;
   avatarUrl?: string; // optional
 }
+
+// Utility Types
+
+export type UpdateUser = Partial<User>;
+
+export type UserBasicInfo = Pick<User, 'id' | 'name'>;
+
+export type UserWithoutCreatedAt = Omit<User, 'createdAt'>;

@@ -8,15 +8,15 @@ Prettier → formatting (spaces, semicolons)
 ESLint → logic issues (unused vars, bad patterns)
 Both together → clean + consistent codebase
 
-
 build size
-dist/index.html                   0.46 kB │ gzip:  0.30 kB
-dist/assets/index-x1XGuNl0.css    0.00 kB │ gzip:  0.02 kB
-dist/assets/index-CX8LliMw.js   190.62 kB │ gzip: 60.03 kB
-
+dist/index.html 0.46 kB │ gzip: 0.30 kB
+dist/assets/index-x1XGuNl0.css 0.00 kB │ gzip: 0.02 kB
+dist/assets/index-CX8LliMw.js 190.62 kB │ gzip: 60.03 kB
 
 “I configured ESLint using flat config, enabled no-unused-vars and React hooks rules, and verified by intentionally adding an unused variable and fixing it.
 
 Required fields → must be present
 Optional fields (?) → can skip
 Type safety → catches errors before runtime
+
+“I configured Prettier with rules like single quotes and no semicolons, added eslint-config-prettier to avoid conflicts, and verified formatting by running npm run format on messy code

@@ -3,12 +3,12 @@ export type Role = 'admin' | 'teacher' | 'student';
 
 // 2. Interface + Primitive Types + Optional Field
 export interface User {
-  id: string;          // primitive
+  id: string; // primitive
   name: string;
   email: string;
-  role: Role;          // union
+  role: Role; // union
   isActive: boolean;
-  age?: number;        // optional
+  age?: number; // optional
 }
 
 // 3. Utility Types
@@ -17,11 +17,10 @@ export interface User {
 export type CreateUser = Omit<User, 'id'>;
 
 // Update → partial fields
-export type UpdateUser = Partial<User>;
+export type UpdateUser = Partial<User | null>;
 
 // List → limited fields
 export type UserListItem = Pick<User, 'id' | 'name' | 'role'>;
-
 
 // 4. Generics (Reusable API Response)
 export interface ApiResponse<T> {
