@@ -58,6 +58,7 @@
 
 
 import Dashboard from './components/Dashboard';
+import Search from './components/Search';
 // import MainApp from './ContaxApi-learning/MainApp';
 
 function App() {
@@ -96,8 +97,13 @@ function App() {
 //   );
 // }
 return(
-  <Dashboard/>
+  <>
+   <Dashboard/>
+   <Search/>
+  </>
+ 
   // <MainApp/>
+  
 )
 }
 export default App;
