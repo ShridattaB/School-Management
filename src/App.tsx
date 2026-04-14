@@ -58,7 +58,9 @@
 
 
 import Dashboard from './components/Dashboard';
+import LoginForm from './components/LoginForm';
 import Search from './components/Search';
+import AppRouter from './router';
 // import MainApp from './ContaxApi-learning/MainApp';
 
 function App() {
@@ -98,8 +100,10 @@ function App() {
 // }
 return(
   <>
+   <AppRouter/>
    <Dashboard/>
    <Search/>
+   <LoginForm onsubmit={()=>{}}/>
   </>
  
   // <MainApp/>

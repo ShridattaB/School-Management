@@ -1,31 +1,23 @@
-import { useContext } from 'react'
-import { AuthContext } from '../contexts/AuthContext'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../hooks/useAuth'
 
 function Dashboard() {
-  const auth = useContext(AuthContext)
-
-  const handleLogin = () => {
-    auth?.setUser({
-      id: '1',
-      role:'student',
-      name: 'Shridatt',
-      email: 'test@gmail.com',
-      createdAt: new Date().toISOString(),
-    })
-  }
+  const { user, setUser } = useAuth()
+  const navigate = useNavigate()
 
   const handleLogout = () => {
-    auth?.setUser(null)
+    setUser(null)
+    navigate('/login', { replace: true })
   }
 
   return (
     <>
       <h2>Dashboard</h2>
 
-      <button onClick={handleLogin}>Login</button>
-      <button onClick={handleLogout}>Logout</button>
+      <p>User: {user?.name}</p>
+      <p>Role: {user?.role}</p>
 
-      <p>User: {auth?.user?.name || 'No user'}</p>
+      <button onClick={handleLogout}>Logout</button>
     </>
   )
 }
