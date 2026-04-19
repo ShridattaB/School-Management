@@ -1,26 +1,24 @@
-import { Navigate, Outlet } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth'
-import type { Role } from '../types/user'
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
+import type { Role } from '../types/user';
+import { ROUTES } from './routes';
 
-type Props = {
-  allowedRoles: Role[]
-}
+type PrivateRouteProps = {
+  allowedRoles: Role[];
+};
 
-function PrivateRoute({ allowedRoles }: Props) {
-  const { user } = useAuth()
+function PrivateRoute({ allowedRoles }: PrivateRouteProps) {
+  const { user } = useAuth();
 
-  // ❌ Not logged in → go to login
   if (!user) {
-    return <Navigate to="/login" replace />
+    return <Navigate to={ROUTES.LOGIN} replace />;
   }
 
-  // ❌ Logged in but wrong role → unauthorized
   if (!allowedRoles.includes(user.role)) {
-    return <Navigate to="/unauthorized" replace />
+    return <Navigate to={ROUTES.UNAUTHORIZED} replace />;
   }
 
-  // ✅ Allowed → render child routes
-  return <Outlet />
+  return <Outlet />;
 }
 
-export default PrivateRoute
+export default PrivateRoute;

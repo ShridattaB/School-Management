@@ -1,4 +1,4 @@
 function AdminDashboard() {
-  return <h2>Admin Dashboard</h2>
+  return <h2>Admin Dashboard</h2>;
 }
-export default AdminDashboard
+export default AdminDashboard;

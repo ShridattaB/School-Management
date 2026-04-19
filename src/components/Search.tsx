@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import { useDebounce } from '../hooks/useDebounce'
+import { useState } from 'react';
+import { useDebounce } from '../hooks/useDebounce';
 
 function Search() {
-  const [input, setInput] = useState('')
-  const debouncedValue = useDebounce(input, 500)
+  const [input, setInput] = useState('');
+  const debouncedValue = useDebounce(input, 500);
 
   return (
     <>
@@ -19,7 +19,7 @@ function Search() {
       <p>Immediate: {input}</p>
       <p>Debounced: {debouncedValue}</p>
     </>
-  )
+  );
 }
 
-export default Search
+export default Search;

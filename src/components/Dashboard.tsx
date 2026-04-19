@@ -1,25 +1,35 @@
-import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth'
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
+import { ROUTES } from '../router/routes';
 
 function Dashboard() {
-  const { user, setUser } = useAuth()
-  const navigate = useNavigate()
+  const { user, setUser } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    setUser(null)
-    navigate('/login', { replace: true })
-  }
+    setUser(null);
+    navigate(ROUTES.LOGIN, { replace: true });
+  };
 
   return (
-    <>
+    <div>
       <h2>Dashboard</h2>
 
-      <p>User: {user?.name}</p>
-      <p>Role: {user?.role}</p>
+      <p>
+        <strong>Name:</strong> {user?.name}
+      </p>
+
+      <p>
+        <strong>Email:</strong> {user?.email}
+      </p>
+
+      <p>
+        <strong>Role:</strong> {user?.role}
+      </p>
 
       <button onClick={handleLogout}>Logout</button>
-    </>
-  )
+    </div>
+  );
 }
 
-export default Dashboard
+export default Dashboard;

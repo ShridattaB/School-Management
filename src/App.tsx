@@ -56,7 +56,6 @@
 
 // export default App;
 
-
 import Dashboard from './components/Dashboard';
 import LoginForm from './components/LoginForm';
 import Search from './components/Search';
@@ -64,50 +63,49 @@ import AppRouter from './router';
 // import MainApp from './ContaxApi-learning/MainApp';
 
 function App() {
-//   const [users, setUsers] = useState<User[]>([]);
+  //   const [users, setUsers] = useState<User[]>([]);
 
-//   // ✅ Partial<User> (update payload)
-//   const updatePayload: UpdateUser = {
-//     name: 'Updated Name',
-//   };
+  //   // ✅ Partial<User> (update payload)
+  //   const updatePayload: UpdateUser = {
+  //     name: 'Updated Name',
+  //   };
 
-//   // ✅ Pick<User>
-//   const basicUser: UserBasicInfo = {
-//     id: '1',
-//     name: 'Shridatt',
-//   };
+  //   // ✅ Pick<User>
+  //   const basicUser: UserBasicInfo = {
+  //     id: '1',
+  //     name: 'Shridatt',
+  //   };
 
-//   // dummy users
-//   const userList: User[] = [
-//     {
-//       id: '1',
-//       name: 'Shridatt',
-//       email: 'test@gmail.com',
-//       role: 'student',
-//       createdAt: new Date().toISOString(),
-//     },
-//   ];
+  //   // dummy users
+  //   const userList: User[] = [
+  //     {
+  //       id: '1',
+  //       name: 'Shridatt',
+  //       email: 'test@gmail.com',
+  //       role: 'student',
+  //       createdAt: new Date().toISOString(),
+  //     },
+  //   ];
 
-//   // ✅ Generic function usage
-//   const foundUser = getById(userList, '1');
+  //   // ✅ Generic function usage
+  //   const foundUser = getById(userList, '1');
 
-//   return (
-//     <>
-//       <h1>School Management System</h1>
-//       <p>{foundUser?.name}</p>
-//     </>
-//   );
-// }
-return(
-  <>
-   <AppRouter/>
-   <Dashboard/>
-   <Search/>
-   <LoginForm onsubmit={()=>{}}/>
-  </>
- 
-  // <MainApp/>
-  
-)
+  //   return (
+  //     <>
+  //       <h1>School Management System</h1>
+  //       <p>{foundUser?.name}</p>
+  //     </>
+  //   );
+  // }
+  return (
+    <>
+      <AppRouter />
+      <Dashboard />
+      <Search />
+      <LoginForm />
+    </>
+
+    // <MainApp/>
+  );
 }
 export default App;

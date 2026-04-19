@@ -1,9 +1,5 @@
-import React from 'react'
-
 function TeacherDashboard() {
-  return (
-    <div>TeacherDashboard</div>
-  )
+  return <div>TeacherDashboard</div>;
 }
 
-export default TeacherDashboard
+export default TeacherDashboard;

@@ -1,17 +1,18 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth'
-import type { User } from '../types/user'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
+import type { User } from '../types/user';
+import { ROUTES } from '../router/routes';
 
 function LoginForm() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const { setUser } = useAuth()
-  const navigate = useNavigate()
+  const { setUser } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
     // ✅ TYPE FIX HERE
     const userData: User = {
@@ -20,26 +21,26 @@ function LoginForm() {
       email,
       role: 'admin', // ✅ must be one of Role
       createdAt: new Date().toISOString(),
-    }
+    };
 
-    setUser(userData)
+    setUser(userData);
 
     // ✅ redirect based on role
     switch (userData.role) {
       case 'admin':
-        navigate('/admin/dashboard')
-        break
+        navigate(ROUTES.ADMIN_DASHBOARD);
+        break;
       case 'teacher':
-        navigate('/teacher/dashboard')
-        break
+        navigate(ROUTES.TEACHER_DASHBOARD);
+        break;
       case 'student':
-        navigate('/student/dashboard')
-        break
+        navigate(ROUTES.STUDENT_DASHBOARD);
+        break;
       case 'parent':
-        navigate('/parent/dashboard')
-        break
+        navigate(ROUTES.PARENT_DASHBOARD);
+        break;
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -61,7 +62,7 @@ function LoginForm() {
 
       <button type="submit">Login</button>
     </form>
-  )
+  );
 }
 
-export default LoginForm
+export default LoginForm;

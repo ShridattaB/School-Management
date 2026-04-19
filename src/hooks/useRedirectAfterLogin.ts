@@ -1,24 +1,24 @@
-import { useAuth } from './useAuth'
+import { useAuth } from './useAuth';
 
 export const useRedirectAfterLogin = () => {
-  const { user } = useAuth()
+  const { user } = useAuth();
 
   const getRedirectPath = (): string => {
-    if (!user) return '/login'
+    if (!user) return '/login';
 
     switch (user.role) {
       case 'admin':
-        return '/admin/dashboard'
+        return '/admin/dashboard';
       case 'teacher':
-        return '/teacher/dashboard'
+        return '/teacher/dashboard';
       case 'student':
-        return '/student/dashboard'
+        return '/student/dashboard';
       case 'parent':
-        return '/parent/dashboard'
+        return '/parent/dashboard';
       default:
-        return '/login'
+        return '/login';
     }
-  }
+  };
 
-  return getRedirectPath
-}
+  return getRedirectPath;
+};
